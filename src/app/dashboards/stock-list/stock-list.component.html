@@ -1,0 +1,8 @@
+<!-- Display the list of stocks in the user's porfolio and allow the user to remove stock-->
+<h2>Your Portfolio</h2>
+<ul>
+    <li **ngFor="let stock of stocks">
+        {{stock.symbol}} - {{stock.quantity }} shares
+        <button (click)="removeStock(stock.id)">Remove</button>
+    </li>
+</ul>
