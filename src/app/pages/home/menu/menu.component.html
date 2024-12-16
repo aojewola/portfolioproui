@@ -1,0 +1,32 @@
+<header class="navbar">
+  <div class="container navbar-content">
+    <div class="logo">
+         <!-- Brand Name -->
+         <a routerLink="/" class="navbar-brand">
+          <h1>PortfolioPro</h1></a>
+    </div>
+    <!-- button for mobile view -->
+    <button class="hamburger" (click)="toggleMenu()">
+      &#9776;
+    </button>
+
+    <!-- Navigation Links -->
+    <nav [class.open]="isMenuOpen">
+      <ul>
+        <li *ngIf="!authService.isUserLoggedIn()">
+          <a routerLink="/signup">Sign Up</a>
+        </li>
+        <li *ngIf="!authService.isUserLoggedIn()">
+          <a routerLink="/login">Login</a>
+        </li>
+        <!-- <li><button class="cta">Sign Up</button></li> -->
+        <li *ngIf="shouldShowDashboardLink()">
+          <a routerLink="/dashboard/1">Dashboard</a>
+        </li>
+        <li *ngIf="authService.isUserLoggedIn()">
+          <a routerLink="/logout">Logout</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

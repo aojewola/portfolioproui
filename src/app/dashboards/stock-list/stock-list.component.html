@@ -1,0 +1,26 @@
+<!-- Display the list of stocks in the user's porfolio and allow the user to remove stock-->
+<div class="container">
+    <h2>Stock List</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Stock Name</th>
+          <th>Ticker</th>
+          <th>Shares</th>
+          <th>Price</th>
+          <th>Value</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stock of stocks">
+          <td>{{ stock.stockName }}</td>
+          <td>{{ stock.ticker }}</td>
+          <td>{{ stock.shares }}</td>
+          <td>{{ stock.price }}</td>
+          <td>{{ stock.totalCost}}</td>
+          <td><button (click)="removeStock(stock.id)" class="alert alert-warning">Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

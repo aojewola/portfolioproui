@@ -1,0 +1,34 @@
+ <div class="container">
+  <h2>Stock</h2>
+  <form (ngSubmit)="!addForm.invalid && fetchStockPriceAndCompanyName()" #addForm="ngForm" *ngIf="stockPrice === null">
+    <div>
+      <label for="ticker">Stock Ticker:</label>
+      <input id="ticker" type="text" [(ngModel)]="stock.ticker" name="ticker" required placeholder="Enter stock symbol"/>
+    </div>
+    <button type="submit">Stock Price</button>
+  </form>
+
+  <div *ngIf="stockPrice !== null">
+    <form (ngSubmit)="!addForm.invalid && addStock()" #addForm="ngForm">
+      <label for="ticker">Stock Ticker:</label>
+      <input id="ticker" [(ngModel)]="stock.ticker" name="ticker" required>
+
+      <label for="companyName">Stock Name:</label>
+      <input id="companyName" [(ngModel)]="companyName" name="companyName" readonly>
+
+      <label for="shares">Number of Shares:</label>
+      <input id="shares" [(ngModel)]="stock.shares" name="shares" type="number" min="0.01" required>
+      <div *ngIf="addForm.controls['shares']?.invalid && addForm.controls['shares']?.touched">
+        Number of shares must be greater than 0.01.
+      </div>
+
+      <label for="price">Price:</label>
+      <input id="price" [value]="stockPrice | currency" name="price" readonly>
+
+      <label for="value">Value:</label>
+      <input id="value" [value]="stockValue | currency:'USD':'symbol':'1.2-2'" name="value" required>
+      <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid">Add Stock</button>
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,85 @@
+/* General Styling for Navbar */
+.navbar {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 0;
+    position: relative;
+  }
+  
+  .navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo a h1 {
+    margin-left: 5px;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  /* Navigation Menu Styling */
+  nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: white;
+    font-size: 16px;
+    padding: 8px;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #ff9800;
+  }
+  
+  /* Hamburger Menu Styling */
+  .hamburger {
+    display: none;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+  
+    nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #222;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+    }
+  
+    nav.open {
+      display: flex;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav ul li {
+      margin: 10px 0;
+    }
+  }

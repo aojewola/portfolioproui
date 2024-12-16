@@ -1,0 +1,28 @@
+<!-- Display the total value of the porfolio -->
+ <div class="container">
+    <h2>Portfolio Summary</h2>
+    <div>
+      <h5>Initial total portfolio value: ${{ portfolioValue.initiaPortfolioValue }}</h5>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Stock Name</th>
+            <th>Ticker</th>
+            <th>Shares</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let stock of portfolio">
+            <td>{{ stock.stockName }}</td>
+            <td>{{ stock.ticker }}</td>
+            <td>{{ stock.shares }}</td>
+            <td>{{ stock.totalCost }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <h5>Currentt total portfolio value: ${{ portfolioValue.initiaPortfolioValue }}</h5>
+      </div>
+    </div>
+  </div>
