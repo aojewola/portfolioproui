@@ -26,13 +26,15 @@ export class StockFormComponent implements OnInit {
   }
 
   addStock(): void {
-    const newStock = {stock_name: this.companyName, ticker: this.stock.ticker, shares: this.stock.shares, price: this.stockPrice };
+    const newStock = {stockName: this.companyName, ticker: this.stock.ticker, shares: this.stock.shares, price: this.stockPrice };
     this.stockService.addStock(newStock)
     .subscribe(() => {
       this.stock.stock_name = '';
       this.stock.shares = 0;
       this.stock.ticker = '';
-    })
+    });
+    alert("Stock added successfully")
+    this.stockPrice = null;
   }
 
   fetchStockPriceAndCompanyName(): void {

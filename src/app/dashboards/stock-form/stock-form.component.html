@@ -26,7 +26,7 @@
       <input id="price" [value]="stockPrice | currency" name="price" readonly>
 
       <label for="value">Value:</label>
-      <input id="value" [value]="stockValue | currency:'USD':'symbol':'1.2-2'" name="value" required>
+      <input id="value" [value]="stockValue | currency:'USD':'symbol':'1.2-2'" name="value" readonly>
       <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid">Add Stock</button>
     </form>
   </div>
