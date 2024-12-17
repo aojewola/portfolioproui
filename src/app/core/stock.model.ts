@@ -31,9 +31,9 @@ export class StockPrice {
   export class PortfolioValue {
 
     constructor(
-      public initiaPortfolioValue: number,
+      public initialPortfolioValue: number,
 
-      public currentPortolioValue: number
+      public currentPortfolioValue: number
     ) {
 
     }

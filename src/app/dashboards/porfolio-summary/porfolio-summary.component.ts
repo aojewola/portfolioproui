@@ -13,7 +13,7 @@ import { PortfolioValue, Stock } from '../../core/stock.model';
 export class PorfolioSummaryComponent  implements OnInit {
   totalValue: number = 0;
   portfolio: Stock[] = [];
-  portfolioValue: PortfolioValue = {initiaPortfolioValue: 0.00, currentPortolioValue: 0.00 };
+  portfolioValue: PortfolioValue = {initialPortfolioValue: 0.00, currentPortfolioValue: 0.00};
 
   constructor(private stockService: StockService) {
 
@@ -32,7 +32,10 @@ export class PorfolioSummaryComponent  implements OnInit {
 
   loadTotalValue(): void {
     this.stockService.getTotalValue()
-    .subscribe(value => this.portfolioValue = value);
+    .subscribe(value => {
+      this.portfolioValue = value;
+      console.log(this.portfolioValue)
+    })
   }
 
 }
